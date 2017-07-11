@@ -67,17 +67,17 @@
     <OptionStrict>Off</OptionStrict>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CHK, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CHK, Version=3.5.2.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Library\CHKFramework\CHK\bin\Release\CHK.dll</HintPath>
+      <HintPath>_ReferenceDlls\CHK.dll</HintPath>
     </Reference>
-    <Reference Include="CHKControl, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CHKControl, Version=3.5.2.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Library\CHKFramework\CHKControl\bin\Release\CHKControl.dll</HintPath>
+      <HintPath>_ReferenceDlls\CHKControl.dll</HintPath>
     </Reference>
     <Reference Include="ScintillaNET, Version=3.6.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\Debug\ScintillaNET.dll</HintPath>
+      <HintPath>_ReferenceDlls\ScintillaNET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Import Include="CHK" />
+    <Import Include="CHKControl" />
     <Import Include="Microsoft.VisualBasic" />
     <Import Include="System" />
     <Import Include="System.Collections" />
@@ -427,6 +428,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\Finder.ico" />
+    <Content Include="_ReferenceDlls\CHK.dll" />
+    <Content Include="_ReferenceDlls\CHKControl.dll" />
+    <Content Include="_ReferenceDlls\ScintillaNET.dll" />
     <Content Include="_Documentation\Uninstall.txt" />
     <None Include="Resources\swap.gif" />
     <None Include="Resources\Close.png" />
