@@ -1,0 +1,497 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{272DD896-E11D-49C1-80EF-510F892192D9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Table_Viewer.My.MyApplication</StartupObject>
+    <RootNamespace>Table_Viewer</RootNamespace>
+    <AssemblyName>Table Viewer</AssemblyName>
+    <MyType>WindowsForms</MyType>
+    <ApplicationIcon>Images\Finder.ico</ApplicationIcon>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Table Viewer.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Table Viewer.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>42017,42018,42019,42020,42021,42022,42030,42032,42036,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CHK, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\CHKFramework\CHK\bin\Release\CHK.dll</HintPath>
+    </Reference>
+    <Reference Include="CHKControl, Version=3.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Library\CHKFramework\CHKControl\bin\Release\CHKControl.dll</HintPath>
+    </Reference>
+    <Reference Include="ScintillaNET, Version=3.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\ScintillaNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="CHK" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox1.Designer.vb">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutBox1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="App_Code\Cache\TableCache.vb" />
+    <Compile Include="frm_AspxGen.Designer.vb">
+      <DependentUpon>frm_AspxGen.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_AspxGen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_ConnectionWizard.Designer.vb">
+      <DependentUpon>frm_ConnectionWizard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_ConnectionWizard.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DatabaseConsistency.Designer.vb">
+      <DependentUpon>frm_DatabaseConsistency.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_DatabaseConsistency.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Copier.Designer.vb">
+      <DependentUpon>frm_Copier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Copier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DatabaseDetails.Designer.vb">
+      <DependentUpon>frm_DatabaseDetails.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_DatabaseDetails.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Dependence.Designer.vb">
+      <DependentUpon>frm_Dependence.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Dependence.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_DatabaseIndex.Designer.vb">
+      <DependentUpon>frm_DatabaseIndex.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_DatabaseIndex.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_QueryHistory.Designer.vb">
+      <DependentUpon>frm_QueryHistory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_QueryHistory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SPExecutor.Designer.vb">
+      <DependentUpon>frm_SPExecutor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SPExecutor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SQLScript.Designer.vb">
+      <DependentUpon>frm_SQLScript.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SQLScript.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_TableColumnEditor.Designer.vb">
+      <DependentUpon>frm_TableColumnEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_TableColumnEditor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_TableStructure.Designer.vb">
+      <DependentUpon>frm_TableStructure.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_TableStructure.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Configuration.Designer.vb">
+      <DependentUpon>frm_Configuration.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Configuration.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SP.Designer.vb">
+      <DependentUpon>frm_SP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SP.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SQL.Designer.vb">
+      <DependentUpon>frm_SQL.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SQL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_SQLSyn.Designer.vb">
+      <DependentUpon>frm_SQLSyn.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_SQLSyn.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Table.Designer.vb">
+      <DependentUpon>frm_Table.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Table.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Database.Designer.vb">
+      <DependentUpon>frm_Database.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Database.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Main.Designer.vb">
+      <DependentUpon>frm_Main.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Main.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App_Code\Interface\IForm.vb" />
+    <Compile Include="App_Code\Utility\Util.vb" />
+    <Compile Include="App_Code\Utility\CryptorEngine.vb" />
+    <Compile Include="ToBeOrganized\DatabaseComparisonLogic.vb" />
+    <Compile Include="App_Code\Utility\ConfigurationSettings.vb" />
+    <Compile Include="ToBeOrganized\ConnectionManager.vb" />
+    <Compile Include="App_Code\DataSet\MiscDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MiscDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\FindReplaceDialog.Designer.vb">
+      <DependentUpon>FindReplaceDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\FindReplaceDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControl\ScintillaEditor.Designer.vb">
+      <DependentUpon>ScintillaEditor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl\ScintillaEditor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="App_Code\SmartSQLServer\ConnectionString.vb" />
+    <Compile Include="App_Code\SmartSQLServer\Consistence.vb" />
+    <Compile Include="ToBeOrganized\CopierLogic.vb" />
+    <Compile Include="ToBeOrganized\QueryHistoryLogic.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="App_Code\SmartSQLServer\CommonProperty.vb" />
+    <Compile Include="frm_Comparer.Designer.vb">
+      <DependentUpon>frm_Comparer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_Comparer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="App_Code\SmartSQLServer\SqlIndex.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlInlineTableFunction.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlUniqueKey.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlColumn.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlConstraint.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlForeignKey.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlQuery.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlQueryBuilder.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlTableBuilder.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlTableValuedFunction.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlScalarValuedFunction.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlDatabaseObject.vb" />
+    <Compile Include="App_Code\SmartSQLServer\IExecutable.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlServer.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlDatabase.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlStoredProcedure.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlTable.vb" />
+    <Compile Include="App_Code\SmartSQLServer\SqlView.vb" />
+    <Compile Include="SystemQueryResource.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SystemQueryResource.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_AspxGen.resx">
+      <DependentUpon>frm_AspxGen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_ConnectionWizard.resx">
+      <DependentUpon>frm_ConnectionWizard.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DatabaseConsistency.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm_DatabaseConsistency.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Comparer.resx">
+      <DependentUpon>frm_Comparer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Copier.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm_Copier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DatabaseDetails.resx">
+      <DependentUpon>frm_DatabaseDetails.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Dependence.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm_Dependence.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_DatabaseIndex.resx">
+      <DependentUpon>frm_DatabaseIndex.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_QueryHistory.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm_QueryHistory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SPExecutor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm_SPExecutor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SQLScript.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm_SQLScript.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_TableColumnEditor.resx">
+      <DependentUpon>frm_TableColumnEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_TableStructure.resx">
+      <DependentUpon>frm_TableStructure.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Configuration.resx">
+      <DependentUpon>frm_Configuration.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm_SP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SQL.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm_SQL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_SQLSyn.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm_SQLSyn.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Table.resx">
+      <DependentUpon>frm_Table.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Database.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm_Database.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_Main.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frm_Main.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\FindReplaceDialog.resx">
+      <DependentUpon>FindReplaceDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl\ScintillaEditor.resx">
+      <DependentUpon>ScintillaEditor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SystemQueryResource.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SystemQueryResource.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="App_Code\DataSet\MiscDataSet.xsc">
+      <DependentUpon>MiscDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="App_Code\DataSet\MiscDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MiscDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App_Code\DataSet\MiscDataSet.xss">
+      <DependentUpon>MiscDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\Finder.ico" />
+    <Content Include="_Documentation\Uninstall.txt" />
+    <None Include="Resources\swap.gif" />
+    <None Include="Resources\Close.png" />
+    <None Include="Resources\Find.gif" />
+    <None Include="Resources\Replace2.gif" />
+    <None Include="Resources\Bookmark.gif" />
+    <None Include="Resources\add-icon.png" />
+    <None Include="Resources\S_icon.png" />
+    <None Include="Resources\Connect_Big.png" />
+    <None Include="Resources\Connect.png" />
+    <None Include="Resources\Schedule2.png" />
+    <None Include="Resources\Schedule.png" />
+    <None Include="Resources\Restore.png" />
+    <None Include="Resources\sql-icon.png" />
+    <None Include="Resources\Process.png" />
+    <None Include="Resources\new-icon.png" />
+    <None Include="Resources\page_user_dark.gif" />
+    <None Include="Resources\PrimaryKey3.gif" />
+    <None Include="Resources\Numbers-icon.png" />
+    <None Include="Resources\page_user_light.gif" />
+    <None Include="Resources\background.jpg" />
+    <None Include="Resources\Details2.png" />
+    <None Include="Resources\Copy2.png" />
+    <None Include="Resources\Stop2.png" />
+    <None Include="Resources\Stop1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="My Project\DataSources\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

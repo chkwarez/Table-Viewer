@@ -1,0 +1,8 @@
+﻿Uninstall Table Viewer
+
+Table viewer doesn't create any files in the file system, it only saves configuration in the windows registry
+
+Steps:
+1. Run 'regedit'
+2. Delete all registries under HKEY_CURRENT_USER\Software\Table Viewer
+3. Delete the execution folder of table viewer, which contains both the dll and exe, like CHK.dll, CHKControl.dll, Table Viewer.exe
