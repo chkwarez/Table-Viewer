@@ -199,27 +199,27 @@ Public Class frm_Table : Implements IFormRefresh, IFormClose
         a.Show()
     End Sub
 
-    Private Sub btnShowDependencies_ButtonClick(sender As System.Object, e As System.EventArgs) Handles btnShowDependencies.ButtonClick
-        btnShowRelatedTables_Click(Nothing, Nothing)
-    End Sub
+    'Private Sub btnShowDependencies_ButtonClick(sender As System.Object, e As System.EventArgs) Handles btnShowDependencies.ButtonClick
+    '    btnShowRelatedTables_Click(Nothing, Nothing)
+    'End Sub
 
-    Private Sub btnShowAllDependencies_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnShowAllDependencies.Click
-        ParentMainForm.CreateDependencyWindow(Table.ObjectID)
-    End Sub
+    'Private Sub btnShowAllDependencies_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnShowAllDependencies.Click
+    '    ParentMainForm.CreateDependencyWindow(Table.ObjectID)
+    'End Sub
 
-    Private Sub btnShowRelatedTables_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnShowRelatedTables.Click
-        If dgContent.CurrentCell Is Nothing Then Exit Sub
-        ParentMainForm.DatabaseWindow.Server.ChangeDatabase(Table.Database)
-        Dim keyName As String = dgContent.Columns(dgContent.CurrentCell.ColumnIndex).HeaderText
-        Dim tables As Integer() = ParentMainForm.DatabaseWindow.Server.Database.SearchTableByPrimaryKey(keyName)
+    'Private Sub btnShowRelatedTables_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnShowRelatedTables.Click
+    '    If dgContent.CurrentCell Is Nothing Then Exit Sub
+    '    ParentMainForm.DatabaseWindow.Server.ChangeDatabase(Table.Database)
+    '    Dim keyName As String = dgContent.Columns(dgContent.CurrentCell.ColumnIndex).HeaderText
+    '    Dim tables As Integer() = ParentMainForm.DatabaseWindow.Server.Database.SearchTableByPrimaryKey(keyName)
 
-        Dim builder As New CHK.Database.SmartCommandBuilder()
-        For n As Integer = 0 To tables.Length - 1
-            If tables(n) = Me.Table.ObjectID Then Continue For 'Your own table, skip
-            Dim f = ParentMainForm.DatabaseWindow.OpenTableFormById(tables(n), Database.SmartCommandBuilder.GetFormattedColumnName(keyName) & " = " & builder.GetFormattedValue(dgContent.CurrentCell.Value))
-            f.AutoSizeGrid()
-        Next
-    End Sub
+    '    Dim builder As New CHK.Database.SmartCommandBuilder()
+    '    For n As Integer = 0 To tables.Length - 1
+    '        If tables(n) = Me.Table.ObjectID Then Continue For 'Your own table, skip
+    '        Dim f = ParentMainForm.DatabaseWindow.OpenTableFormById(tables(n), Database.SmartCommandBuilder.GetFormattedColumnName(keyName) & " = " & builder.GetFormattedValue(dgContent.CurrentCell.Value))
+    '        f.AutoSizeGrid()
+    '    Next
+    'End Sub
 
     Private Sub btnSave_ButtonClick(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSave.ButtonClick
         SaveTable()
@@ -245,9 +245,7 @@ Public Class frm_Table : Implements IFormRefresh, IFormClose
         'BatchTable.ExportToHtml(source.DefaultView, cmdgSave.FileName, True)
     End Sub
 
-    Private Sub ASPXToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ASPXToolStripMenuItem.Click
-        ParentMainForm.CreateAspxGenerator(Table)
-    End Sub
+
 
     Private Sub btnGenerateGUID_Click(sender As System.Object, e As System.EventArgs) Handles btnGenerateGUID.Click
         lblStatus.Text = "Generating GUID..."
@@ -474,8 +472,6 @@ Public Class frm_Table : Implements IFormRefresh, IFormClose
             Select Case e.KeyCode
                 Case Keys.S 'Ctrl + S (Save)
                     SaveTable()
-                Case Keys.T 'Ctrl + T (Relate Table)
-                    btnShowRelatedTables_Click(btnShowRelatedTables, Nothing)
             End Select
         End If
     End Sub

@@ -204,8 +204,6 @@ Public Class frm_SP : Implements IFormClose, IFormRefresh
                 OpenQueryWindow(objectID, DatabaseObjectOperation.Edit)
             Case 3 'Execute
                 OpenQueryWindow(objectID, DatabaseObjectOperation.Execute)
-            Case 4 'Dependency
-                ParentMainForm.CreateDependencyWindow(objectID)
             Case 4
             Case 5
             Case 6

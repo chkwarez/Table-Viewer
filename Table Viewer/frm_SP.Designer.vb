@@ -22,19 +22,12 @@ Partial Class frm_SP
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_SP))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.dgResult = New CHKControl.GridView.SmartDataGrid()
-        Me.dgcSPSelect = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.dgcSPName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgcEdit = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.dgcExecute = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.dgcShowDependencies = New System.Windows.Forms.DataGridViewImageColumn()
-        Me.dgcSPLastUpdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgcSPParameter = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgcSPStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.txtSchema = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -82,6 +75,14 @@ Partial Class frm_SP
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.cmdgSave = New System.Windows.Forms.SaveFileDialog()
+        Me.dgcSPSelect = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.dgcSPName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgcEdit = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.dgcExecute = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.dgcShowDependencies = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.dgcSPLastUpdate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgcSPParameter = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgcSPStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox1.SuspendLayout()
         CType(Me.dgResult, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
@@ -93,8 +94,8 @@ Partial Class frm_SP
         'GroupBox1
         '
         Me.GroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GroupBox1.Controls.Add(Me.dgResult)
         Me.GroupBox1.Location = New System.Drawing.Point(226, 31)
         Me.GroupBox1.Name = "GroupBox1"
@@ -109,8 +110,8 @@ Partial Class frm_SP
         Me.dgResult.AllowUserToDeleteRows = False
         Me.dgResult.AllowUserToResizeRows = False
         Me.dgResult.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.dgResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgResult.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.dgcSPSelect, Me.dgcSPName, Me.dgcEdit, Me.dgcExecute, Me.dgcShowDependencies, Me.dgcSPLastUpdate, Me.dgcSPParameter, Me.dgcSPStatus})
         Me.dgResult.Location = New System.Drawing.Point(6, 19)
@@ -119,6 +120,418 @@ Partial Class frm_SP
         Me.dgResult.RowTemplate.Height = 24
         Me.dgResult.Size = New System.Drawing.Size(678, 500)
         Me.dgResult.TabIndex = 1
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.txtSchema)
+        Me.GroupBox2.Controls.Add(Me.Label7)
+        Me.GroupBox2.Controls.Add(Me.chkSearchModifiedDate)
+        Me.GroupBox2.Controls.Add(Me.txtSearchModifiedDateE)
+        Me.GroupBox2.Controls.Add(Me.Label3)
+        Me.GroupBox2.Controls.Add(Me.txtSearchModifiedDateS)
+        Me.GroupBox2.Controls.Add(Me.ddSearchCode)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.Label4)
+        Me.GroupBox2.Controls.Add(Me.ddSearchName)
+        Me.GroupBox2.Controls.Add(Me.btnFind)
+        Me.GroupBox2.Location = New System.Drawing.Point(7, 31)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(213, 212)
+        Me.GroupBox2.TabIndex = 10
+        Me.GroupBox2.TabStop = False
+        Me.GroupBox2.Text = "General Search"
+        '
+        'txtSchema
+        '
+        Me.txtSchema.Location = New System.Drawing.Point(54, 70)
+        Me.txtSchema.Name = "txtSchema"
+        Me.txtSchema.Size = New System.Drawing.Size(100, 23)
+        Me.txtSchema.TabIndex = 3
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(2, 73)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(59, 16)
+        Me.Label7.TabIndex = 18
+        Me.Label7.Text = "Schema"
+        '
+        'chkSearchModifiedDate
+        '
+        Me.chkSearchModifiedDate.AutoSize = True
+        Me.chkSearchModifiedDate.Location = New System.Drawing.Point(5, 101)
+        Me.chkSearchModifiedDate.Name = "chkSearchModifiedDate"
+        Me.chkSearchModifiedDate.Size = New System.Drawing.Size(155, 20)
+        Me.chkSearchModifiedDate.TabIndex = 4
+        Me.chkSearchModifiedDate.Text = "Date of Modification"
+        Me.chkSearchModifiedDate.UseVisualStyleBackColor = True
+        '
+        'txtSearchModifiedDateE
+        '
+        Me.txtSearchModifiedDateE.Enabled = False
+        Me.txtSearchModifiedDateE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.txtSearchModifiedDateE.Location = New System.Drawing.Point(110, 120)
+        Me.txtSearchModifiedDateE.Name = "txtSearchModifiedDateE"
+        Me.txtSearchModifiedDateE.Size = New System.Drawing.Size(97, 23)
+        Me.txtSearchModifiedDateE.TabIndex = 6
+        '
+        'Label3
+        '
+        Me.Label3.ForeColor = System.Drawing.Color.Red
+        Me.Label3.Location = New System.Drawing.Point(2, 143)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(201, 33)
+        Me.Label3.TabIndex = 8
+        Me.Label3.Text = "Use % to explicityly indicate starts with or ends with"
+        '
+        'txtSearchModifiedDateS
+        '
+        Me.txtSearchModifiedDateS.Enabled = False
+        Me.txtSearchModifiedDateS.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.txtSearchModifiedDateS.Location = New System.Drawing.Point(5, 120)
+        Me.txtSearchModifiedDateS.Name = "txtSearchModifiedDateS"
+        Me.txtSearchModifiedDateS.Size = New System.Drawing.Size(95, 23)
+        Me.txtSearchModifiedDateS.TabIndex = 5
+        '
+        'ddSearchCode
+        '
+        Me.ddSearchCode.EnableHistory = True
+        Me.ddSearchCode.FormattingEnabled = True
+        Me.ddSearchCode.Location = New System.Drawing.Point(54, 44)
+        Me.ddSearchCode.LossenValue = ""
+        Me.ddSearchCode.Name = "ddSearchCode"
+        Me.ddSearchCode.Size = New System.Drawing.Size(153, 24)
+        Me.ddSearchCode.TabIndex = 2
+        Me.ddSearchCode.Value = Nothing
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(2, 47)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(42, 16)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Code"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(2, 22)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(44, 16)
+        Me.Label4.TabIndex = 8
+        Me.Label4.Text = "Name"
+        '
+        'ddSearchName
+        '
+        Me.ddSearchName.EnableHistory = True
+        Me.ddSearchName.FormattingEnabled = True
+        Me.ddSearchName.Location = New System.Drawing.Point(54, 19)
+        Me.ddSearchName.LossenValue = ""
+        Me.ddSearchName.Name = "ddSearchName"
+        Me.ddSearchName.Size = New System.Drawing.Size(153, 24)
+        Me.ddSearchName.TabIndex = 1
+        Me.ddSearchName.Value = Nothing
+        '
+        'btnFind
+        '
+        Me.btnFind.Location = New System.Drawing.Point(5, 179)
+        Me.btnFind.Name = "btnFind"
+        Me.btnFind.Size = New System.Drawing.Size(202, 23)
+        Me.btnFind.TabIndex = 10
+        Me.btnFind.Text = "Find (F5)"
+        Me.btnFind.UseVisualStyleBackColor = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.radSelectTF)
+        Me.GroupBox4.Controls.Add(Me.radSelectFN)
+        Me.GroupBox4.Controls.Add(Me.radSelectSP)
+        Me.GroupBox4.Location = New System.Drawing.Point(7, 249)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(213, 70)
+        Me.GroupBox4.TabIndex = 20
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Object"
+        '
+        'radSelectTF
+        '
+        Me.radSelectTF.AutoSize = True
+        Me.radSelectTF.Location = New System.Drawing.Point(5, 49)
+        Me.radSelectTF.Name = "radSelectTF"
+        Me.radSelectTF.Size = New System.Drawing.Size(122, 20)
+        Me.radSelectTF.TabIndex = 9
+        Me.radSelectTF.Text = "Table Function"
+        Me.radSelectTF.UseVisualStyleBackColor = True
+        '
+        'radSelectFN
+        '
+        Me.radSelectFN.AutoSize = True
+        Me.radSelectFN.Location = New System.Drawing.Point(5, 31)
+        Me.radSelectFN.Name = "radSelectFN"
+        Me.radSelectFN.Size = New System.Drawing.Size(128, 20)
+        Me.radSelectFN.TabIndex = 8
+        Me.radSelectFN.Text = "Scalar Function"
+        Me.radSelectFN.UseVisualStyleBackColor = True
+        '
+        'radSelectSP
+        '
+        Me.radSelectSP.AutoSize = True
+        Me.radSelectSP.Checked = True
+        Me.radSelectSP.Location = New System.Drawing.Point(5, 13)
+        Me.radSelectSP.Name = "radSelectSP"
+        Me.radSelectSP.Size = New System.Drawing.Size(141, 20)
+        Me.radSelectSP.TabIndex = 7
+        Me.radSelectSP.TabStop = True
+        Me.radSelectSP.Text = "Stored Procedure"
+        Me.radSelectSP.UseVisualStyleBackColor = True
+        '
+        'ToolStrip1
+        '
+        Me.ToolStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
+        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ddDatabase, Me.btnSetCurrentDatabase, Me.ToolStripSeparator2, Me.ToolStripLabel2, Me.btnRename, Me.btnDelete, Me.ToolStripSplitButton1, Me.ddTargetDatabase, Me.ToolStripSeparator1, Me.btnVerifySyntax, Me.btnExport, Me.btnOpenAll})
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
+        Me.ToolStrip1.Name = "ToolStrip1"
+        Me.ToolStrip1.Size = New System.Drawing.Size(918, 27)
+        Me.ToolStrip1.TabIndex = 15
+        Me.ToolStrip1.Text = "ToolStrip1"
+        '
+        'ToolStripLabel1
+        '
+        Me.ToolStripLabel1.Name = "ToolStripLabel1"
+        Me.ToolStripLabel1.Size = New System.Drawing.Size(73, 24)
+        Me.ToolStripLabel1.Text = "Database"
+        '
+        'ddDatabase
+        '
+        Me.ddDatabase.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.ddDatabase.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.ddDatabase.DropDownWidth = 200
+        Me.ddDatabase.Name = "ddDatabase"
+        Me.ddDatabase.Size = New System.Drawing.Size(120, 27)
+        '
+        'btnSetCurrentDatabase
+        '
+        Me.btnSetCurrentDatabase.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.btnSetCurrentDatabase.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
+        Me.btnSetCurrentDatabase.Image = CType(resources.GetObject("btnSetCurrentDatabase.Image"), System.Drawing.Image)
+        Me.btnSetCurrentDatabase.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnSetCurrentDatabase.Name = "btnSetCurrentDatabase"
+        Me.btnSetCurrentDatabase.Size = New System.Drawing.Size(66, 24)
+        Me.btnSetCurrentDatabase.Text = "Current"
+        '
+        'ToolStripSeparator2
+        '
+        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 27)
+        '
+        'ToolStripLabel2
+        '
+        Me.ToolStripLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.ToolStripLabel2.ForeColor = System.Drawing.Color.Navy
+        Me.ToolStripLabel2.Name = "ToolStripLabel2"
+        Me.ToolStripLabel2.Size = New System.Drawing.Size(82, 24)
+        Me.ToolStripLabel2.Text = "Operation"
+        '
+        'btnRename
+        '
+        Me.btnRename.Image = CType(resources.GetObject("btnRename.Image"), System.Drawing.Image)
+        Me.btnRename.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnRename.Name = "btnRename"
+        Me.btnRename.Size = New System.Drawing.Size(90, 24)
+        Me.btnRename.Text = "Rename"
+        '
+        'btnDelete
+        '
+        Me.btnDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.btnDelete.Image = CType(resources.GetObject("btnDelete.Image"), System.Drawing.Image)
+        Me.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnDelete.Name = "btnDelete"
+        Me.btnDelete.Size = New System.Drawing.Size(24, 24)
+        Me.btnDelete.Text = "Delete"
+        '
+        'ToolStripSplitButton1
+        '
+        Me.ToolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.ToolStripSplitButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnCopyAndUpdate, Me.btnCopyAndCreate})
+        Me.ToolStripSplitButton1.Image = Global.Table_Viewer.My.Resources.Resources.Copy2
+        Me.ToolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.ToolStripSplitButton1.Name = "ToolStripSplitButton1"
+        Me.ToolStripSplitButton1.Size = New System.Drawing.Size(39, 24)
+        Me.ToolStripSplitButton1.Text = "ToolStripSplitButton1"
+        '
+        'btnCopyAndUpdate
+        '
+        Me.btnCopyAndUpdate.Name = "btnCopyAndUpdate"
+        Me.btnCopyAndUpdate.Size = New System.Drawing.Size(153, 26)
+        Me.btnCopyAndUpdate.Text = "Update to"
+        '
+        'btnCopyAndCreate
+        '
+        Me.btnCopyAndCreate.Name = "btnCopyAndCreate"
+        Me.btnCopyAndCreate.Size = New System.Drawing.Size(153, 26)
+        Me.btnCopyAndCreate.Text = "Create at"
+        '
+        'ddTargetDatabase
+        '
+        Me.ddTargetDatabase.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
+        Me.ddTargetDatabase.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
+        Me.ddTargetDatabase.DropDownWidth = 200
+        Me.ddTargetDatabase.Name = "ddTargetDatabase"
+        Me.ddTargetDatabase.Size = New System.Drawing.Size(120, 27)
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 27)
+        '
+        'btnVerifySyntax
+        '
+        Me.btnVerifySyntax.Image = CType(resources.GetObject("btnVerifySyntax.Image"), System.Drawing.Image)
+        Me.btnVerifySyntax.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnVerifySyntax.Name = "btnVerifySyntax"
+        Me.btnVerifySyntax.Size = New System.Drawing.Size(124, 24)
+        Me.btnVerifySyntax.Text = "Verify Syntax"
+        '
+        'btnExport
+        '
+        Me.btnExport.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreateToolStripMenuItem, Me.AlterToolStripMenuItem, Me.CraeteToFileToolStripMenuItem, Me.AlterToFileToolStripMenuItem, Me.ManagementStudioToolStripMenuItem})
+        Me.btnExport.Image = CType(resources.GetObject("btnExport.Image"), System.Drawing.Image)
+        Me.btnExport.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnExport.Name = "btnExport"
+        Me.btnExport.Size = New System.Drawing.Size(92, 24)
+        Me.btnExport.Text = "Export"
+        '
+        'CreateToolStripMenuItem
+        '
+        Me.CreateToolStripMenuItem.Name = "CreateToolStripMenuItem"
+        Me.CreateToolStripMenuItem.Size = New System.Drawing.Size(227, 26)
+        Me.CreateToolStripMenuItem.Tag = "Create"
+        Me.CreateToolStripMenuItem.Text = "Create"
+        '
+        'AlterToolStripMenuItem
+        '
+        Me.AlterToolStripMenuItem.Name = "AlterToolStripMenuItem"
+        Me.AlterToolStripMenuItem.Size = New System.Drawing.Size(227, 26)
+        Me.AlterToolStripMenuItem.Tag = "Alter"
+        Me.AlterToolStripMenuItem.Text = "Alter"
+        '
+        'CraeteToFileToolStripMenuItem
+        '
+        Me.CraeteToFileToolStripMenuItem.Name = "CraeteToFileToolStripMenuItem"
+        Me.CraeteToFileToolStripMenuItem.Size = New System.Drawing.Size(227, 26)
+        Me.CraeteToFileToolStripMenuItem.Tag = "CreateFile"
+        Me.CraeteToFileToolStripMenuItem.Text = "Create (To File)"
+        '
+        'AlterToFileToolStripMenuItem
+        '
+        Me.AlterToFileToolStripMenuItem.Name = "AlterToFileToolStripMenuItem"
+        Me.AlterToFileToolStripMenuItem.Size = New System.Drawing.Size(227, 26)
+        Me.AlterToFileToolStripMenuItem.Tag = "AlterFile"
+        Me.AlterToFileToolStripMenuItem.Text = "Alter (To File)"
+        '
+        'ManagementStudioToolStripMenuItem
+        '
+        Me.ManagementStudioToolStripMenuItem.Name = "ManagementStudioToolStripMenuItem"
+        Me.ManagementStudioToolStripMenuItem.Size = New System.Drawing.Size(227, 26)
+        Me.ManagementStudioToolStripMenuItem.Tag = "SSMSE"
+        Me.ManagementStudioToolStripMenuItem.Text = "Management Studio"
+        '
+        'btnOpenAll
+        '
+        Me.btnOpenAll.Image = CType(resources.GetObject("btnOpenAll.Image"), System.Drawing.Image)
+        Me.btnOpenAll.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.btnOpenAll.Name = "btnOpenAll"
+        Me.btnOpenAll.Size = New System.Drawing.Size(71, 24)
+        Me.btnOpenAll.Text = "Open"
+        '
+        'lblStatus
+        '
+        Me.lblStatus.AutoSize = True
+        Me.lblStatus.ForeColor = System.Drawing.Color.Blue
+        Me.lblStatus.Location = New System.Drawing.Point(9, 445)
+        Me.lblStatus.Name = "lblStatus"
+        Me.lblStatus.Size = New System.Drawing.Size(48, 16)
+        Me.lblStatus.TabIndex = 16
+        Me.lblStatus.Text = "Status"
+        '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.btnFindColumn)
+        Me.GroupBox3.Controls.Add(Me.txtDataType)
+        Me.GroupBox3.Controls.Add(Me.txtColumnName)
+        Me.GroupBox3.Controls.Add(Me.txtTableName)
+        Me.GroupBox3.Controls.Add(Me.Label6)
+        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Controls.Add(Me.Label1)
+        Me.GroupBox3.Location = New System.Drawing.Point(7, 325)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(213, 117)
+        Me.GroupBox3.TabIndex = 30
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Search by Column (Declared Variable)"
+        '
+        'btnFindColumn
+        '
+        Me.btnFindColumn.Location = New System.Drawing.Point(5, 89)
+        Me.btnFindColumn.Name = "btnFindColumn"
+        Me.btnFindColumn.Size = New System.Drawing.Size(202, 23)
+        Me.btnFindColumn.TabIndex = 18
+        Me.btnFindColumn.Text = "Find All Reference"
+        Me.btnFindColumn.UseVisualStyleBackColor = True
+        '
+        'txtDataType
+        '
+        Me.txtDataType.Location = New System.Drawing.Point(88, 63)
+        Me.txtDataType.Name = "txtDataType"
+        Me.txtDataType.Size = New System.Drawing.Size(119, 23)
+        Me.txtDataType.TabIndex = 5
+        '
+        'txtColumnName
+        '
+        Me.txtColumnName.Location = New System.Drawing.Point(88, 39)
+        Me.txtColumnName.Name = "txtColumnName"
+        Me.txtColumnName.Size = New System.Drawing.Size(119, 23)
+        Me.txtColumnName.TabIndex = 4
+        '
+        'txtTableName
+        '
+        Me.txtTableName.Location = New System.Drawing.Point(88, 16)
+        Me.txtTableName.Name = "txtTableName"
+        Me.txtTableName.Size = New System.Drawing.Size(119, 23)
+        Me.txtTableName.TabIndex = 3
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(2, 65)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(73, 16)
+        Me.Label6.TabIndex = 2
+        Me.Label6.Text = "Data Type"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(2, 42)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(96, 16)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Column Name"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(2, 19)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(42, 16)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Table"
+        '
+        'cmdgSave
+        '
+        Me.cmdgSave.Filter = "SQL Query (*.sql)|*.sql|Text (*.txt)|*.txt|All Files|*.*"
         '
         'dgcSPSelect
         '
@@ -155,6 +568,7 @@ Partial Class frm_SP
         Me.dgcShowDependencies.Image = CType(resources.GetObject("dgcShowDependencies.Image"), System.Drawing.Image)
         Me.dgcShowDependencies.Name = "dgcShowDependencies"
         Me.dgcShowDependencies.ToolTipText = "Show Dependencies"
+        Me.dgcShowDependencies.Visible = False
         Me.dgcShowDependencies.Width = 20
         '
         'dgcSPLastUpdate
@@ -179,420 +593,9 @@ Partial Class frm_SP
         Me.dgcSPStatus.Name = "dgcSPStatus"
         Me.dgcSPStatus.ReadOnly = True
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.txtSchema)
-        Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.chkSearchModifiedDate)
-        Me.GroupBox2.Controls.Add(Me.txtSearchModifiedDateE)
-        Me.GroupBox2.Controls.Add(Me.Label3)
-        Me.GroupBox2.Controls.Add(Me.txtSearchModifiedDateS)
-        Me.GroupBox2.Controls.Add(Me.ddSearchCode)
-        Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.Label4)
-        Me.GroupBox2.Controls.Add(Me.ddSearchName)
-        Me.GroupBox2.Controls.Add(Me.btnFind)
-        Me.GroupBox2.Location = New System.Drawing.Point(7, 31)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(213, 212)
-        Me.GroupBox2.TabIndex = 10
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "General Search"
-        '
-        'txtSchema
-        '
-        Me.txtSchema.Location = New System.Drawing.Point(54, 70)
-        Me.txtSchema.Name = "txtSchema"
-        Me.txtSchema.Size = New System.Drawing.Size(100, 20)
-        Me.txtSchema.TabIndex = 3
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(2, 73)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(46, 14)
-        Me.Label7.TabIndex = 18
-        Me.Label7.Text = "Schema"
-        '
-        'chkSearchModifiedDate
-        '
-        Me.chkSearchModifiedDate.AutoSize = True
-        Me.chkSearchModifiedDate.Location = New System.Drawing.Point(5, 101)
-        Me.chkSearchModifiedDate.Name = "chkSearchModifiedDate"
-        Me.chkSearchModifiedDate.Size = New System.Drawing.Size(121, 17)
-        Me.chkSearchModifiedDate.TabIndex = 4
-        Me.chkSearchModifiedDate.Text = "Date of Modification"
-        Me.chkSearchModifiedDate.UseVisualStyleBackColor = True
-        '
-        'txtSearchModifiedDateE
-        '
-        Me.txtSearchModifiedDateE.Enabled = False
-        Me.txtSearchModifiedDateE.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txtSearchModifiedDateE.Location = New System.Drawing.Point(110, 120)
-        Me.txtSearchModifiedDateE.Name = "txtSearchModifiedDateE"
-        Me.txtSearchModifiedDateE.Size = New System.Drawing.Size(97, 20)
-        Me.txtSearchModifiedDateE.TabIndex = 6
-        '
-        'Label3
-        '
-        Me.Label3.ForeColor = System.Drawing.Color.Red
-        Me.Label3.Location = New System.Drawing.Point(2, 143)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(201, 33)
-        Me.Label3.TabIndex = 8
-        Me.Label3.Text = "Use % to explicityly indicate starts with or ends with"
-        '
-        'txtSearchModifiedDateS
-        '
-        Me.txtSearchModifiedDateS.Enabled = False
-        Me.txtSearchModifiedDateS.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.txtSearchModifiedDateS.Location = New System.Drawing.Point(5, 120)
-        Me.txtSearchModifiedDateS.Name = "txtSearchModifiedDateS"
-        Me.txtSearchModifiedDateS.Size = New System.Drawing.Size(95, 20)
-        Me.txtSearchModifiedDateS.TabIndex = 5
-        '
-        'ddSearchCode
-        '
-        Me.ddSearchCode.EnableHistory = True
-        Me.ddSearchCode.FormattingEnabled = True
-        Me.ddSearchCode.Location = New System.Drawing.Point(54, 44)
-        Me.ddSearchCode.LossenValue = ""
-        Me.ddSearchCode.Name = "ddSearchCode"
-        Me.ddSearchCode.Size = New System.Drawing.Size(153, 22)
-        Me.ddSearchCode.TabIndex = 2
-        Me.ddSearchCode.Value = Nothing
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(2, 47)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(32, 14)
-        Me.Label5.TabIndex = 9
-        Me.Label5.Text = "Code"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(2, 22)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(34, 14)
-        Me.Label4.TabIndex = 8
-        Me.Label4.Text = "Name"
-        '
-        'ddSearchName
-        '
-        Me.ddSearchName.EnableHistory = True
-        Me.ddSearchName.FormattingEnabled = True
-        Me.ddSearchName.Location = New System.Drawing.Point(54, 19)
-        Me.ddSearchName.LossenValue = ""
-        Me.ddSearchName.Name = "ddSearchName"
-        Me.ddSearchName.Size = New System.Drawing.Size(153, 22)
-        Me.ddSearchName.TabIndex = 1
-        Me.ddSearchName.Value = Nothing
-        '
-        'btnFind
-        '
-        Me.btnFind.Location = New System.Drawing.Point(5, 179)
-        Me.btnFind.Name = "btnFind"
-        Me.btnFind.Size = New System.Drawing.Size(202, 23)
-        Me.btnFind.TabIndex = 10
-        Me.btnFind.Text = "Find (F5)"
-        Me.btnFind.UseVisualStyleBackColor = True
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.radSelectTF)
-        Me.GroupBox4.Controls.Add(Me.radSelectFN)
-        Me.GroupBox4.Controls.Add(Me.radSelectSP)
-        Me.GroupBox4.Location = New System.Drawing.Point(7, 249)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(213, 70)
-        Me.GroupBox4.TabIndex = 20
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Object"
-        '
-        'radSelectTF
-        '
-        Me.radSelectTF.AutoSize = True
-        Me.radSelectTF.Location = New System.Drawing.Point(5, 49)
-        Me.radSelectTF.Name = "radSelectTF"
-        Me.radSelectTF.Size = New System.Drawing.Size(96, 17)
-        Me.radSelectTF.TabIndex = 9
-        Me.radSelectTF.Text = "Table Function"
-        Me.radSelectTF.UseVisualStyleBackColor = True
-        '
-        'radSelectFN
-        '
-        Me.radSelectFN.AutoSize = True
-        Me.radSelectFN.Location = New System.Drawing.Point(5, 31)
-        Me.radSelectFN.Name = "radSelectFN"
-        Me.radSelectFN.Size = New System.Drawing.Size(99, 17)
-        Me.radSelectFN.TabIndex = 8
-        Me.radSelectFN.Text = "Scalar Function"
-        Me.radSelectFN.UseVisualStyleBackColor = True
-        '
-        'radSelectSP
-        '
-        Me.radSelectSP.AutoSize = True
-        Me.radSelectSP.Checked = True
-        Me.radSelectSP.Location = New System.Drawing.Point(5, 13)
-        Me.radSelectSP.Name = "radSelectSP"
-        Me.radSelectSP.Size = New System.Drawing.Size(108, 17)
-        Me.radSelectSP.TabIndex = 7
-        Me.radSelectSP.TabStop = True
-        Me.radSelectSP.Text = "Stored Procedure"
-        Me.radSelectSP.UseVisualStyleBackColor = True
-        '
-        'ToolStrip1
-        '
-        Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripLabel1, Me.ddDatabase, Me.btnSetCurrentDatabase, Me.ToolStripSeparator2, Me.ToolStripLabel2, Me.btnRename, Me.btnDelete, Me.ToolStripSplitButton1, Me.ddTargetDatabase, Me.ToolStripSeparator1, Me.btnVerifySyntax, Me.btnExport, Me.btnOpenAll})
-        Me.ToolStrip1.Location = New System.Drawing.Point(0, 0)
-        Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(918, 25)
-        Me.ToolStrip1.TabIndex = 15
-        Me.ToolStrip1.Text = "ToolStrip1"
-        '
-        'ToolStripLabel1
-        '
-        Me.ToolStripLabel1.Name = "ToolStripLabel1"
-        Me.ToolStripLabel1.Size = New System.Drawing.Size(62, 22)
-        Me.ToolStripLabel1.Text = "Database"
-        '
-        'ddDatabase
-        '
-        Me.ddDatabase.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
-        Me.ddDatabase.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.ddDatabase.DropDownWidth = 200
-        Me.ddDatabase.Name = "ddDatabase"
-        Me.ddDatabase.Size = New System.Drawing.Size(120, 25)
-        '
-        'btnSetCurrentDatabase
-        '
-        Me.btnSetCurrentDatabase.BackColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.btnSetCurrentDatabase.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.btnSetCurrentDatabase.Image = CType(resources.GetObject("btnSetCurrentDatabase.Image"), System.Drawing.Image)
-        Me.btnSetCurrentDatabase.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnSetCurrentDatabase.Name = "btnSetCurrentDatabase"
-        Me.btnSetCurrentDatabase.Size = New System.Drawing.Size(53, 22)
-        Me.btnSetCurrentDatabase.Text = "Current"
-        '
-        'ToolStripSeparator2
-        '
-        Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(6, 25)
-        '
-        'ToolStripLabel2
-        '
-        Me.ToolStripLabel2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.0!, System.Drawing.FontStyle.Bold)
-        Me.ToolStripLabel2.ForeColor = System.Drawing.Color.Navy
-        Me.ToolStripLabel2.Name = "ToolStripLabel2"
-        Me.ToolStripLabel2.Size = New System.Drawing.Size(70, 22)
-        Me.ToolStripLabel2.Text = "Operation"
-        '
-        'btnRename
-        '
-        Me.btnRename.Image = CType(resources.GetObject("btnRename.Image"), System.Drawing.Image)
-        Me.btnRename.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnRename.Name = "btnRename"
-        Me.btnRename.Size = New System.Drawing.Size(75, 22)
-        Me.btnRename.Text = "Rename"
-        '
-        'btnDelete
-        '
-        Me.btnDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.btnDelete.Image = CType(resources.GetObject("btnDelete.Image"), System.Drawing.Image)
-        Me.btnDelete.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnDelete.Name = "btnDelete"
-        Me.btnDelete.Size = New System.Drawing.Size(23, 22)
-        Me.btnDelete.Text = "Delete"
-        '
-        'ToolStripSplitButton1
-        '
-        Me.ToolStripSplitButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
-        Me.ToolStripSplitButton1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.btnCopyAndUpdate, Me.btnCopyAndCreate})
-        Me.ToolStripSplitButton1.Image = Global.Table_Viewer.My.Resources.Resources.Copy2
-        Me.ToolStripSplitButton1.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.ToolStripSplitButton1.Name = "ToolStripSplitButton1"
-        Me.ToolStripSplitButton1.Size = New System.Drawing.Size(32, 22)
-        Me.ToolStripSplitButton1.Text = "ToolStripSplitButton1"
-        '
-        'btnCopyAndUpdate
-        '
-        Me.btnCopyAndUpdate.Name = "btnCopyAndUpdate"
-        Me.btnCopyAndUpdate.Size = New System.Drawing.Size(134, 22)
-        Me.btnCopyAndUpdate.Text = "Update to"
-        '
-        'btnCopyAndCreate
-        '
-        Me.btnCopyAndCreate.Name = "btnCopyAndCreate"
-        Me.btnCopyAndCreate.Size = New System.Drawing.Size(134, 22)
-        Me.btnCopyAndCreate.Text = "Create at"
-        '
-        'ddTargetDatabase
-        '
-        Me.ddTargetDatabase.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append
-        Me.ddTargetDatabase.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems
-        Me.ddTargetDatabase.DropDownWidth = 200
-        Me.ddTargetDatabase.Name = "ddTargetDatabase"
-        Me.ddTargetDatabase.Size = New System.Drawing.Size(120, 25)
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(6, 25)
-        '
-        'btnVerifySyntax
-        '
-        Me.btnVerifySyntax.Image = CType(resources.GetObject("btnVerifySyntax.Image"), System.Drawing.Image)
-        Me.btnVerifySyntax.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnVerifySyntax.Name = "btnVerifySyntax"
-        Me.btnVerifySyntax.Size = New System.Drawing.Size(100, 22)
-        Me.btnVerifySyntax.Text = "Verify Syntax"
-        '
-        'btnExport
-        '
-        Me.btnExport.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CreateToolStripMenuItem, Me.AlterToolStripMenuItem, Me.CraeteToFileToolStripMenuItem, Me.AlterToFileToolStripMenuItem, Me.ManagementStudioToolStripMenuItem})
-        Me.btnExport.Image = CType(resources.GetObject("btnExport.Image"), System.Drawing.Image)
-        Me.btnExport.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnExport.Name = "btnExport"
-        Me.btnExport.Size = New System.Drawing.Size(77, 22)
-        Me.btnExport.Text = "Export"
-        '
-        'CreateToolStripMenuItem
-        '
-        Me.CreateToolStripMenuItem.Name = "CreateToolStripMenuItem"
-        Me.CreateToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.CreateToolStripMenuItem.Tag = "Create"
-        Me.CreateToolStripMenuItem.Text = "Create"
-        '
-        'AlterToolStripMenuItem
-        '
-        Me.AlterToolStripMenuItem.Name = "AlterToolStripMenuItem"
-        Me.AlterToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.AlterToolStripMenuItem.Tag = "Alter"
-        Me.AlterToolStripMenuItem.Text = "Alter"
-        '
-        'CraeteToFileToolStripMenuItem
-        '
-        Me.CraeteToFileToolStripMenuItem.Name = "CraeteToFileToolStripMenuItem"
-        Me.CraeteToFileToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.CraeteToFileToolStripMenuItem.Tag = "CreateFile"
-        Me.CraeteToFileToolStripMenuItem.Text = "Create (To File)"
-        '
-        'AlterToFileToolStripMenuItem
-        '
-        Me.AlterToFileToolStripMenuItem.Name = "AlterToFileToolStripMenuItem"
-        Me.AlterToFileToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.AlterToFileToolStripMenuItem.Tag = "AlterFile"
-        Me.AlterToFileToolStripMenuItem.Text = "Alter (To File)"
-        '
-        'ManagementStudioToolStripMenuItem
-        '
-        Me.ManagementStudioToolStripMenuItem.Name = "ManagementStudioToolStripMenuItem"
-        Me.ManagementStudioToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.ManagementStudioToolStripMenuItem.Tag = "SSMSE"
-        Me.ManagementStudioToolStripMenuItem.Text = "Management Studio"
-        '
-        'btnOpenAll
-        '
-        Me.btnOpenAll.Image = CType(resources.GetObject("btnOpenAll.Image"), System.Drawing.Image)
-        Me.btnOpenAll.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.btnOpenAll.Name = "btnOpenAll"
-        Me.btnOpenAll.Size = New System.Drawing.Size(60, 22)
-        Me.btnOpenAll.Text = "Open"
-        '
-        'lblStatus
-        '
-        Me.lblStatus.AutoSize = True
-        Me.lblStatus.ForeColor = System.Drawing.Color.Blue
-        Me.lblStatus.Location = New System.Drawing.Point(9, 445)
-        Me.lblStatus.Name = "lblStatus"
-        Me.lblStatus.Size = New System.Drawing.Size(38, 14)
-        Me.lblStatus.TabIndex = 16
-        Me.lblStatus.Text = "Status"
-        '
-        'GroupBox3
-        '
-        Me.GroupBox3.Controls.Add(Me.btnFindColumn)
-        Me.GroupBox3.Controls.Add(Me.txtDataType)
-        Me.GroupBox3.Controls.Add(Me.txtColumnName)
-        Me.GroupBox3.Controls.Add(Me.txtTableName)
-        Me.GroupBox3.Controls.Add(Me.Label6)
-        Me.GroupBox3.Controls.Add(Me.Label2)
-        Me.GroupBox3.Controls.Add(Me.Label1)
-        Me.GroupBox3.Location = New System.Drawing.Point(7, 325)
-        Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(213, 117)
-        Me.GroupBox3.TabIndex = 30
-        Me.GroupBox3.TabStop = False
-        Me.GroupBox3.Text = "Search by Column (Declared Variable)"
-        '
-        'btnFindColumn
-        '
-        Me.btnFindColumn.Location = New System.Drawing.Point(5, 89)
-        Me.btnFindColumn.Name = "btnFindColumn"
-        Me.btnFindColumn.Size = New System.Drawing.Size(202, 23)
-        Me.btnFindColumn.TabIndex = 18
-        Me.btnFindColumn.Text = "Find All Reference"
-        Me.btnFindColumn.UseVisualStyleBackColor = True
-        '
-        'txtDataType
-        '
-        Me.txtDataType.Location = New System.Drawing.Point(88, 63)
-        Me.txtDataType.Name = "txtDataType"
-        Me.txtDataType.Size = New System.Drawing.Size(119, 20)
-        Me.txtDataType.TabIndex = 5
-        '
-        'txtColumnName
-        '
-        Me.txtColumnName.Location = New System.Drawing.Point(88, 39)
-        Me.txtColumnName.Name = "txtColumnName"
-        Me.txtColumnName.Size = New System.Drawing.Size(119, 20)
-        Me.txtColumnName.TabIndex = 4
-        '
-        'txtTableName
-        '
-        Me.txtTableName.Location = New System.Drawing.Point(88, 16)
-        Me.txtTableName.Name = "txtTableName"
-        Me.txtTableName.Size = New System.Drawing.Size(119, 20)
-        Me.txtTableName.TabIndex = 3
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(2, 65)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(55, 14)
-        Me.Label6.TabIndex = 2
-        Me.Label6.Text = "Data Type"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(2, 42)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 14)
-        Me.Label2.TabIndex = 1
-        Me.Label2.Text = "Column Name"
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(2, 19)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(32, 14)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Table"
-        '
-        'cmdgSave
-        '
-        Me.cmdgSave.Filter = "SQL Query (*.sql)|*.sql|Text (*.txt)|*.txt|All Files|*.*"
-        '
         'frm_SP
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 14.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(918, 563)
         Me.Controls.Add(Me.GroupBox3)
@@ -664,16 +667,16 @@ Partial Class frm_SP
     Friend WithEvents txtSearchModifiedDateS As CHKControl.ExtendedDateTimePicker
     Friend WithEvents txtSchema As System.Windows.Forms.TextBox
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents dgcSPSelect As System.Windows.Forms.DataGridViewCheckBoxColumn
-    Friend WithEvents dgcSPName As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dgcEdit As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents dgcExecute As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents dgcShowDependencies As System.Windows.Forms.DataGridViewImageColumn
-    Friend WithEvents dgcSPLastUpdate As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dgcSPParameter As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents dgcSPStatus As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ddTargetDatabase As System.Windows.Forms.ToolStripComboBox
     Friend WithEvents ToolStripSplitButton1 As System.Windows.Forms.ToolStripSplitButton
     Friend WithEvents btnCopyAndUpdate As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents btnCopyAndCreate As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents dgcSPSelect As DataGridViewCheckBoxColumn
+    Friend WithEvents dgcSPName As DataGridViewTextBoxColumn
+    Friend WithEvents dgcEdit As DataGridViewImageColumn
+    Friend WithEvents dgcExecute As DataGridViewImageColumn
+    Friend WithEvents dgcShowDependencies As DataGridViewImageColumn
+    Friend WithEvents dgcSPLastUpdate As DataGridViewTextBoxColumn
+    Friend WithEvents dgcSPParameter As DataGridViewTextBoxColumn
+    Friend WithEvents dgcSPStatus As DataGridViewTextBoxColumn
 End Class

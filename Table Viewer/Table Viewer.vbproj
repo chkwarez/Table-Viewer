@@ -119,12 +119,6 @@
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="App_Code\Cache\TableCache.vb" />
-    <Compile Include="frm_AspxGen.Designer.vb">
-      <DependentUpon>frm_AspxGen.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_AspxGen.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frm_ConnectionWizard.Designer.vb">
       <DependentUpon>frm_ConnectionWizard.vb</DependentUpon>
     </Compile>
@@ -147,12 +141,6 @@
       <DependentUpon>frm_DatabaseDetails.vb</DependentUpon>
     </Compile>
     <Compile Include="frm_DatabaseDetails.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frm_Dependence.Designer.vb">
-      <DependentUpon>frm_Dependence.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frm_Dependence.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_DatabaseIndex.Designer.vb">
@@ -310,9 +298,6 @@
     <EmbeddedResource Include="AboutBox1.resx">
       <DependentUpon>AboutBox1.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frm_AspxGen.resx">
-      <DependentUpon>frm_AspxGen.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frm_ConnectionWizard.resx">
       <DependentUpon>frm_ConnectionWizard.vb</DependentUpon>
     </EmbeddedResource>
@@ -329,10 +314,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_DatabaseDetails.resx">
       <DependentUpon>frm_DatabaseDetails.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frm_Dependence.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>frm_Dependence.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_DatabaseIndex.resx">
       <DependentUpon>frm_DatabaseIndex.vb</DependentUpon>

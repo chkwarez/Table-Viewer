@@ -496,16 +496,16 @@ Public Class frm_Main
         Return a
     End Function
 
-    Public Function CreateAspxGenerator(ByVal table As Smart.SqlTable) As frm_AspxGen
-        Dim a As New frm_AspxGen
-        a.MdiParent = Me
-        a.Table = table
+    'Public Function CreateAspxGenerator(ByVal table As Smart.SqlTable) As frm_AspxGen
+    '    Dim a As New frm_AspxGen
+    '    a.MdiParent = Me
+    '    a.Table = table
 
-        TabBar1.AddForm(a, Color.Black, Color.White, Color.Purple)
-        a.Show()
-        TabBar1.Refresh()
-        Return a
-    End Function
+    '    TabBar1.AddForm(a, Color.Black, Color.White, Color.Purple)
+    '    a.Show()
+    '    TabBar1.Refresh()
+    '    Return a
+    'End Function
 
     Public Function CreateSQLSynthesizer(ByVal table As Smart.SqlTable) As frm_SQLSyn
         Dim a As New frm_SQLSyn
@@ -559,14 +559,14 @@ Public Class frm_Main
         QueryWindows.Remove(f)
     End Sub
 
-    Public Function CreateDependencyWindow(ByVal objectID As Integer) As frm_Dependence
-        Dim a As New frm_Dependence
-        a.ParentMainForm = Me
-        a.ObjectID = objectID
-        a.LoadDependency()
-        a.Show()
-        Return a
-    End Function
+    'Public Function CreateDependencyWindow(ByVal objectID As Integer) As frm_Dependence
+    '    Dim a As New frm_Dependence
+    '    a.ParentMainForm = Me
+    '    a.ObjectID = objectID
+    '    a.LoadDependency()
+    '    a.Show()
+    '    Return a
+    'End Function
 
     Public Function CreateQueryHistoryWindow() As frm_QueryHistory
         Dim a As New frm_QueryHistory
